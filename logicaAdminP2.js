@@ -8,6 +8,8 @@ const categoriatabla = document.getElementById("categoriatabla")
 const descripciontabla = document.getElementById("descripciontabla")
 const publicartabla = document.getElementById("publicartabla")
 
+const tablaJuegos = document.getElementById('juegos')
+
 const crearJuego = (sku, nombre, descripcion, categoria, publicar) => {
   let item = {
     sku: sku,
@@ -43,20 +45,29 @@ const mostrarDB = () => {
         if(element.estado){
 
            
-        listaJuegos.innerHTML += `<div class="alert alert-danger" role="alert">
+        listaJuegos.innerHTML += `<div class="alert alert-success" role="alert">
         <i class="material-icons float-left mr-2">accessibility</i><b> ${element.sku} - ${element.nombre} - 
         ${element.descripcion} - ${element.categoria} </b> - ${element.publicar} <span class="float-right"><i class="material-icons">done</i><i class="material-icons">delete</i></span></div>`;
         } else { //Pude asignar todos pero si pongo ${element. } no lo corre, no se cual seria lo correcto para que pueda seguirse viendo abajo.
                 //tambien me queda la duda de que hacer con el if
-                skutabla.innerHTML = element.sku
-                nombretabla.innerHTML = element.nombre
-                descripciontabla.innerHTML = element.descripcion
-                categoriatabla.innerHTML = element.categoria
-                publicartabla.innerHTML = element.publicar
-            //listaJuegos.innerHTML +=`<div class="alert alert-danger" role="alert">
-            //<i class="material-icons float-left mr-2">accessibility</i><b> ${element.sku} - ${element.nombre} - 
-            //${element.descripcion} - ${element.categoria} </b> - ${element.publicar} <span class="float-right">
-            //<i class="material-icons">done</i><i class="material-icons">delete</i></span></div>`;
+                //skutabla.innerHTML = element.sku
+                //nombretabla.innerHTML = element.nombre
+                //descripciontabla.innerHTML = element.descripcion
+                //categoriatabla.innerHTML = element.categoria
+                //publicartabla.innerHTML = element.publicar
+            /*listaJuegos.innerHTML +=`<table class="alert alert-danger" role="alert">
+            <i class="material-icons float-left mr-2">accessibility</i><b> ${element.sku} - ${element.nombre} - 
+            ${element.descripcion} - ${element.categoria} </b> - ${element.publicar} <span class="float-right">
+            <i class="material-icons">done</i><i class="material-icons">delete</i></span></table>`;
+            tablaJuegos.innerHTML +=`< class="alert alert-danger" role="alert">
+            <i class="material-icons float-left mr-2">accessibility</i><b> ${element.sku} - ${element.nombre} - 
+            ${element.descripcion} - ${element.categoria} </b> - ${element.publicar} <span class="float-right">
+            <i class="material-icons">done</i><i class="material-icons">delete</i></span></table>`;*/
+            skutabla.innerHTML += `<div>${element.sku}</div>`
+            nombretabla.innerHTML += `<div>${element.nombre}</div>`
+            descripciontabla.innerHTML += `<div>${element.descripcion}</div>`
+            categoriatabla.innerHTML += `<div>${element.categoria}</div>`
+            publicartabla.innerHTML += `<div>${element.publicar}</div>`
         }
     });
   }
